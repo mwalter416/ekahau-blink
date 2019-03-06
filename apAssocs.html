@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<title>APs</title>
+<b>Access Points</b>
+<table>
+<tr>
+	<th>ID</th>
+	<th>mac</th>
+</tr>
+{% for ap in apAssocs %}
+<tr>
+	<td>{{ap[0]}}</td>
+	<td>{{ap[1]}}</td>
+</tr>
+{% endfor %}
+</table>
+</html>

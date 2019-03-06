@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<title>APs</title>
+<b>Access Points</b>
+<table>
+<tr>
+	<th>name</th>
+	<th>mine</th>
+	<th>userDefinedPosition</th>
+	<th>id</th>
+	<th>legacyId</th>
+	<th>status</th>
+	<th>floorPlanId</th>
+	<th>x</th>
+	<th>y</th>
+	<th>noteIds</th>
+</tr>
+{% for ap in jsonAccessPoints["accessPoints"] %}
+{% if ap["location"] is defined -%}
+<tr>
+	<td>{{ap["name"]}}</td>
+	<td>{{ap["mine"]}}</td>
+	<td>{{ap["userDefinedPosition"]}}</td>
+	<td>{{ap["id"]}}</td>
+	<td>{{ap["legacyId"]}}</td>
+	<td>{{ap["status"]}}</td>
+	<td>{{ap["location"]["floorPlanId"]}}</td>
+	<td>{{ap["location"]["coord"]["x"]}}</td>
+	<td>{{ap["location"]["coord"]["y"]}}</td>
+	<td>
+	{% for noteId in ap["noteIds"] %}
+	{{noteId}}
+	{% endfor %}
+	</td>
+</tr>
+{% endif -%}
+{% endfor %}
+</table>
+</html>

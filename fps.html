@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+<title>FPs</title>
+<b>Floor Plans</b>
+<table>
+<tr>
+ <th>name</th>
+ <th>width</th>
+ <th>height</th>
+ <th>metersPerUnit</th>
+ <th>imageId</th>
+ <th>bitmapImageId</th>
+ <th>floorPlanType</th>
+ <th>id</th>
+ <th>legacyId</th>
+ <th>status</th>
+</tr>
+{% for fp in jsonFloorPlans["floorPlans"] %}
+<tr>
+ <td>{{fp["name"]}}</td>
+ <td>{{fp["width"]}}</td>
+ <td>{{fp["height"]}}</td>
+ <td>{{fp["metersPerUnit"]}}</td>
+ <td>{{fp["imageId"]}}</td>
+ <td>{{fp["bitmapImageId"]}}</td>
+ <td>{{fp["floorPlanType"]}}</td>
+ <td>{{fp["id"]}}</td>
+ <td>{{fp["legacyId"]}}</td>
+ <td>{{fp["status"]}}</td>
+</tr>
+{% endfor %}
+</table>
+</html>

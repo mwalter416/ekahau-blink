@@ -1,0 +1,14 @@
+#Cisco WLC: show ap join stats summary all
+#
+#Number of APs.............................................. 583
+#
+#Base Mac             AP EthernetMac       AP Name                 IP Address         Status
+#
+Value BaseMac (..:..:..:..:..:..)
+Value APEthernetMac (..:..:..:..:..:..|N A)
+Value APName (.+)
+Value IPAddress (\d+\.\d+\.\d+\.\d+)
+Value Status (Not Joined|Joined)
+
+Start
+  ^${BaseMac}     *${APEthernetMac}     *${APName}     *${IPAddress}         *${Status} -> Record
