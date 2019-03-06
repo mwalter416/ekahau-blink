@@ -4,7 +4,7 @@
     <body>
     {%- for fp in jsonFloorPlans["floorPlans"] %}
         <svg width="{{fp["width"]}}" height="{{fp["height"]}}" >
-		        <image xlink:href="/static/image-{{fp["id"]}}.png" width="{{fp["width"]}}" height="{{fp["height"]}}"/>
+            <image xlink:href="/static/image-{{fp["id"]}}.png" width="{{fp["width"]}}" height="{{fp["height"]}}"/>
             {% for ap in jsonAccessPoints["accessPoints"] -%}
             {% if ap["location"] is defined -%}
             {% if ap["location"]["floorPlanId"] == fp["id"] -%}
